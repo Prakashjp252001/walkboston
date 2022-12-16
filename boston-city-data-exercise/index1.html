@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id="container">
+  <!-- populated by JS-->
+</div>
+<script src="./boston.js"></script>
+<script>
+  function renderPosts(boston, container) {
+    var person=boston.data;
+    var len = boston.data.length; // posts is an array
+    var html = '';
+    for (let i = 0; i < len; i++) {
+      html += '<li class="post">' +
+        '<h2>' + person[i][8].title + '</h2>' +
+        '<h3>' + person[i][11].content + '</h3>'
+    }
+    container.innerHTML = '<ul id = "boston">' + html + '</ul>';
+  }
+  renderPosts(boston, document.getElementById('container'));
+</script>
+</body>
+</html>
